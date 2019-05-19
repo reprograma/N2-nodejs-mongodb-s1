@@ -26,7 +26,7 @@ app.get("/api/maravilhosas", (req, res) => {
 
 app.get("/api/maravilhosas/:id", (req, res) => {
   maravilhosas.findById(req.params.id, (err, maravilhosa) => {
-    if (err) res.send(err);
+    if (err) return res.send(err);
   
     res.send(maravilhosa);
   });
@@ -34,12 +34,13 @@ app.get("/api/maravilhosas/:id", (req, res) => {
 
 app.post("/api/maravilhosas", (req, res) => {
   const novaMaravilhosa = new maravilhosas({
-    title: req.body.title,
-    description: req.body.description
+    nome: req.body.nome,
+    bio: req.body.bio,
+    avatar: req.body.avatar,
   });
   
   novaMaravilhosa.save(err => {
-    if (err) res.send(err);
+    if (err) return res.send(err);
   
     res.send(novaMaravilhosa);
   });
