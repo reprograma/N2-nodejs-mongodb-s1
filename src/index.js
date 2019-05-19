@@ -1,18 +1,18 @@
 // TODO: continuar da semana de Node
 
 const express = require("express");
-const maravilhosas = require('./schema.js');
-const db =  require('./db.js')
+const maravilhosas = require("./schema.js");
+const db =  require("./db.js")
 
 const PORT = process.env.PORT || 5000;
-const MONGO_URL = 'mongodb://localhost:27017/reprograma'
+const MONGO_URL = "mongodb://localhost:27017/reprograma"
 
 db.connect(MONGO_URL)
 
 const app = express();
 app.use(express.json());
 
-app.get("/api/maravilhosa", (req, res) => {
+app.get("/api/maravilhosas", (req, res) => {
   maravilhosas.find((error, response) => {
     // preciso tratar o erro, caso ocorra
     if (error) {
@@ -24,7 +24,7 @@ app.get("/api/maravilhosa", (req, res) => {
   });
 })
 
-app.get("/api/maravilhosa/:id", (req, res) => {
+app.get("/api/maravilhosas/:id", (req, res) => {
   maravilhosas.findById(req.params.id, (err, maravilhosa) => {
     if (err) res.send(err);
   
@@ -32,7 +32,7 @@ app.get("/api/maravilhosa/:id", (req, res) => {
   });
 })
 
-app.post("/api/maravilhosa", (req, res) => {
+app.post("/api/maravilhosas", (req, res) => {
   const novaMaravilhosa = new maravilhosas({
     title: req.body.title,
     description: req.body.description
@@ -45,7 +45,7 @@ app.post("/api/maravilhosa", (req, res) => {
   });
 });
 
-app.put("/api/maravilhosa/:id", (req, res) => {
+app.put("/api/maravilhosas/:id", (req, res) => {
   maravilhosas.findByIdAndUpdate(
     req.params.id,
     { $set: req.body },
@@ -57,7 +57,7 @@ app.put("/api/maravilhosa/:id", (req, res) => {
   );
 })
 
-app.delete("/api/maravilhosa/:id", (req, res) => {
+app.delete("/api/maravilhosas/:id", (req, res) => {
   maravilhosas.findByIdAndDelete(req.params.id, { $set: req.body }, function(
     err,
     maravilhosa

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // cada schema equivale a uma coleção
 var Schema = mongoose.Schema;
