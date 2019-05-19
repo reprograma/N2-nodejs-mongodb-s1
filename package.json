@@ -1,0 +1,25 @@
+{
+  "name": "N2-nodejs-mongodb-s1",
+  "version": "1.0.0",
+  "description": "Semana 10 - Usando MongoDB no backend em NodeJs",
+  "main": "index.js",
+  "dependencies": {
+    "express": "4.16.4",
+    "mongoose": "5.5.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reprograma/N2-nodejs-mongodb-s1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reprograma/N2-nodejs-mongodb-s1/issues"
+  },
+  "homepage": "https://github.com/reprograma/N2-nodejs-mongodb-s1#readme"
+}
