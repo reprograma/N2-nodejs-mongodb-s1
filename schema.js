@@ -20,10 +20,10 @@ var MaravilhosaSchema = new Schema({
   */
 });
 
-// retorno o _id no campo id para manter compatibilidade com o front
-MaravilhosaSchema.virtual("id").get(function() {
-  return this._id;
-});
+//retorno o _id no campo id para manter compatibilidade com o front
+// MaravilhosaSchema.virtual("id").get(function() {
+//   return this._id;
+// });
 
 // exporto este módulo
 const maravilhosas = mongoose.model("maravilhosas", MaravilhosaSchema);
